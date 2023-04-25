@@ -1,0 +1,41 @@
+.overviewContainer {
+  flex: 6;
+  .widgets {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    color: #d83a3a;
+  }
+  .chart {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  .filter-by-time form {
+    display: flex;
+    justify-content: end;
+    .filter-item,
+    .filter-button {
+      margin-left: 20px;
+      input {
+        padding: 5px;
+        border-radius: 10px;
+      }
+      select {
+        border-radius: 10px;
+        background-color: white;
+        height: 38px;
+      }
+    }
+    .filter-button {
+      button {
+        padding: 7px 15px 7px 15px;
+        border-radius: 10px;
+      }
+    }
+  }
+  .time {
+    width: 100%;
+  }
+}

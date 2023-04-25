@@ -1,0 +1,48 @@
+.order_manage_page {
+  .filter_section_order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fff;
+    &_button {
+      width: 80%;
+      text-align: center;
+      padding: 20px;
+      cursor: pointer;
+      i {
+        padding-right: 5px;
+      }
+      &:hover {
+        border-radius: 5px;
+        // background-color: #c4c4c4;
+      }
+    }
+  }
+  .filter_section_status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3vh;
+    border-radius: 5px;
+    background-color: #fff;
+    &_button {
+      width: 90%;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 0.2s linear;
+      &:hover {
+        background-color: rgba(215, 68, 61, 0.25);
+      }
+      i {
+        padding-right: 5px;
+      }
+    }
+  }
+  .isActive {
+    background-color: #d7443d;
+    border-radius: 5px;
+    color: white;
+  }
+}

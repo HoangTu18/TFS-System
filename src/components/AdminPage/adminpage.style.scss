@@ -1,0 +1,253 @@
+.admin-page {
+  background-color: rgba(196, 196, 196, 1);
+  &__header {
+    background-color: #fff;
+    margin: 0 0 0 30px;
+    padding: 20px 30px;
+    border-radius: 0px 0px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h4 {
+      font-weight: 400;
+    }
+    .admin-page__header-right {
+      display: flex;
+      align-items: center;
+      .notification {
+        display: flex;
+        position: relative;
+        .icon {
+          font-size: 30px;
+        }
+        .avatar {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+        .counter {
+          width: 15px;
+          height: 15px;
+          background-color: red;
+          border-radius: 50%;
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          font-weight: bold;
+          position: absolute;
+          top: -5px;
+          right: -5px;
+        }
+        .sub-menu-notifi {
+          position: absolute;
+          top: 70%;
+          right: 15%;
+          width: 350px;
+          height: 20rem;
+          z-index: 5;
+          display: none;
+          border: none;
+          .sub-menu {
+            overflow-y: scroll;
+            background: #fff;
+            // padding: 20px;
+            margin: 15px;
+            z-index: 4;
+            border: 1px solid #c4c4c4;
+            .sub-menu-top {
+              border-bottom: 1px solid #c4c4c4;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 10px;
+            }
+            .sub-menu-center {
+              padding: 5px;
+              max-height: 250px;
+              .sub-menu-item {
+                width: 100%;
+                padding: 15px;
+                cursor: pointer;
+                &:hover {
+                  background-color: #fafafb;
+                }
+                .icon {
+                  font-size: 15px;
+                }
+              }
+              .notifi {
+                display: flex;
+              }
+              audio {
+                display: none;
+              }
+              .menu-checked .menu-checked-title {
+                display: flex;
+                justify-content: flex-end;
+                color: #00b14f;
+                padding-right: 10px;
+                font-size: 15px;
+              }
+              .menu-notCheck .menu-notCheck-title {
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 10px;
+                color: #00b14f;
+                font-size: 15px;
+              }
+            }
+            .sub-menu-footer {
+              margin-top: 20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-top: 1px solid #c4c4c4;
+              .buttonViewAll {
+                padding-top: 10px;
+                height: 20px;
+                &:hover {
+                  padding-top: 10px;
+                  height: 20px;
+                  color: blue;
+                }
+              }
+            }
+          }
+        }
+        .sub-menu-notifi.open-menu-notifi {
+          max-height: 450px;
+          display: block;
+        }
+      }
+      .dropdown {
+        margin-left: auto;
+        width: 250px;
+        position: relative;
+        &__select {
+          padding: 10px 20px 10px 20px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+        &__text {
+          margin-left: 15px;
+        }
+        &__caret {
+          margin-left: auto;
+        }
+        &__item {
+          background-color: white;
+          padding: 10px 20px 10px 20px;
+          display: flex;
+          align-items: center;
+          transition: all 0.2s linear;
+          cursor: pointer;
+          box-shadow: 0 0 10px 0 rgba($color: black, $alpha: 0.1);
+          border-right: 5px solid transparent;
+          &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+          }
+          &:hover {
+            border-right-color: #cf403a;
+          }
+        }
+        &__list {
+          position: absolute;
+          left: 0;
+          top: 100%;
+          width: 100%;
+          margin-top: 10px;
+          border-radius: 4px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.25s linear;
+          z-index: 1;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            transform: translateY(-100%);
+          }
+        }
+        &:hover {
+          .dropdown__list {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 10px;
+        }
+        i {
+          color: red;
+        }
+      }
+    }
+  }
+  &__body {
+    padding: 30px 50px;
+  }
+}
+
+.toptable {
+  background-color: #d7443d;
+  padding: 5px;
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--topnav-height);
+  h1 {
+    color: #fff;
+  }
+}
+
+.topnav__search {
+  position: relative;
+  height: 50px;
+  background-color: var(--main-bg);
+  display: flex;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.topnav__search > input {
+  height: 100%;
+  width: 100%;
+  padding: 10px 60px 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: var(--txt-color);
+  background-color: var(--main-bg);
+}
+
+.topnav__search > i {
+  font-size: 1.2rem;
+  position: absolute;
+  color: var(--txt-color);
+  right: 20px;
+}
+
+.topnav__right {
+  display: flex;
+  align-items: center;
+}
+
+.topnav__right-item ~ .topnav__right-item {
+  margin-left: 20px;
+}
+
+.recharts-surface {
+  width: 101%;
+}
